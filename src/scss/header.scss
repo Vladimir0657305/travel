@@ -1,5 +1,694 @@
 //====================================================================================================
+.header {
+	font-family: $fontFamily;
+}
 
+.header__top {
+	min-width: 100%;
+	@include adaptiveValue("height", 60, 40);
+	display: flex;
+	flex: 1 1 auto;
+	align-items: center;
+	@include adaptiveValue("font-size", 18, 14);
+	
+	&-logo  {
+		display: flex;
+		align-items: center;
+		z-index: 6;
+	}
+	
+	& img {
+	@include adaptiveValue("height", 60, 40);
+	}
+	
+	&-menu {
+	display: flex;
+	flex: 1;
+	justify-content: flex-end;
+	align-items: center;
+	
+	}
+}
+
+.menu {
+	// display: flex;
+}
+
+.top-menu {
+	&__items {
+		height: 100%;;
+	}
+	&__items  {
+		align-items: center;
+		& li:hover {
+			// color: red;
+		}
+	}
+
+	&__item {
+		display: inline-block;
+		position: relative;
+		margin-left: 20px;
+		// padding: 20px 0;
+		@include adaptiveValue("padding-top", 20, 5);
+		@include adaptiveValue("padding-bottom", 20, 0);
+		// padding-bottom: 20px;
+		& li:hover{
+			color: red;
+		}
+	}
+
+	&__item:hover  {
+		.top-menu__submenu {
+			display: block;
+			opacity: 1;
+			visibility: visible;
+			transform: translate(0px, 0px);
+			pointer-events: all;
+			transition: all 0.8s ease 0s;
+		}
+	}
+	&__links:hover {
+		color: red;
+	}
+}
+
+// @media (min-wigth: 767px) {
+// 	.top-menu__submenu {
+// 		display: flex;
+// 		align-items: center;
+// 		transform: translate(0, 10%);
+// 		opacity: 0;
+// 		visibility: hidden;
+// 		pointer-events: none;
+// 		transition: all 0.8s ease 0s;
+// 	}
+
+// 	.top-menu__submenu li {
+// 	}
+// }
+
+
+.top-menu__link span {
+}
+
+.top-menu__submenu {
+	display: none;
+	position: absolute;
+	// top: 100%;
+	@include adaptiveValue("top", 65, 40);
+	left: 0;
+	// width: 200px;
+	@include adaptiveValue("width", 200, 60);
+	// @include adaptiveValue("heigth", 200, 10);
+	padding: 10px;
+	height: 70px;
+	border-radius: 2px;
+	// background-color: rgb(238, 241, 242);
+	background: rgba(238, 241, 242, 1);
+	z-index: 1;
+	& li:first-child:after {
+		content: '';
+		position: absolute;
+		top: 50%;
+		left: 0;
+		width: 100%;
+		height: 2px;
+		background-color: rgba(198, 191, 191, 0.4);
+	}
+}
+
+.top-menu__submenu li:last-child {
+	margin-top: 20px;
+}
+
+.top-menu__button {
+	margin-left: 2rem;
+	@include adaptiveValue("margin-left", 40, 5);
+	align-items: center;
+}
+
+.button {
+	align-items: center;
+	width: 100px;
+	height:  40px;
+	font-size: 16px;
+	background-color: transparent;
+	border: 2px solid red;
+	border-radius: 20px;
+	// text-transform: uppercase;
+	overflow: hidden;
+	position: relative;
+	&:hover {
+		color:red;
+	}
+	& span {
+			position: absolute;
+			background: red;
+			transform: translate(-50%, -50%);
+			pointer-events: none;
+			border-radius: 50%;
+			animation: animate 1s linear infinite;
+		}
+	
+		@keyframes animate {
+			0% {
+				width: 0;
+				height: 0;
+				opacity: 0.5;
+			}
+	
+			100% {
+				width: 500px;
+				height: 500px;
+				opacity: 0;
+			}
+		}
+}
+
+.burger {}
+
+.burger2 {}
+
+.icon-arrow:before {
+	content: "\ea1c";
+}
+
+.material-symbols-outlined {
+	transform: rotate(90deg);
+	font-weight: 700;
+	// font-variation-settings:
+	// 	'FILL' 0,
+	// 	'wght' 400,
+	// 	'GRAD' 0,
+	// 	'opsz' 48
+	
+}
+.themetoogle {
+	margin-left: 10px;
+	transform: rotate(-45deg);
+}
+
+
+// =======================================================================================
+
+
+
+
+
+
+// https: //codepen.io/EricPorter/pen/RwZGoBR
+// .burger {
+// 	--font-size: rem(); // Scale is using font-size in rems;
+// 	--color1: #000;
+// 	--borderRadius: 1em;
+// 	display: none;
+// 	font-size: var(--font-size);
+// 	cursor: pointer;
+// 	padding: 3em 1.5em; ///////////////// touch area size
+	
+// 	&>div {
+// 		z-index: 6;
+// 		width: 3em;
+// 		height: 0.2em;
+// 		border-radius: var(--borderRadius);
+// 		background: var(--color1);
+
+// 		&::before,
+// 		&::after {
+// 			z-index: 6;
+// 			transition: font-size 0s;
+// 			content: "";
+// 			display: block;
+// 			position: absolute;
+// 			width: 3em;
+// 			height: 0.2em;
+// 			background: var(--color1);
+// 			border-radius: var(--borderRadius);
+// 		}
+
+// 		&::before {
+// 			margin-top: -.8em;
+// 		}
+
+// 		&::after {
+// 			margin-top: .8em;
+// 		}
+// 	}
+// }
+// .burger2 {
+// 	&>div {
+// 		// transition: background 0.4s, font-size 0s;
+
+// 		&::before,
+// 		&::after {
+// 			transition: font-size 0s;
+// 			transform-origin: center center;
+// 		}
+// 	}
+
+// 	&.toggled {
+// 		>div::before {
+// 			animation: burg2top 0.4s linear forwards;
+// 		}
+
+// 		>div {
+// 			background: transparent;
+// 		}
+
+// 		>div::after {
+// 			animation: burg2bottom 0.4s linear forwards;
+// 		}
+// 	}
+
+// 	&.unToggled {
+// 		>div::before {
+// 			animation: burg2topReset 0.4s linear forwards;
+// 		}
+
+// 		>div {
+// 			background: var(--color1);
+// 		}
+
+// 		>div::after {
+// 			animation: burg2bottomReset 0.4s linear forwards;
+// 		}
+// 	}
+
+// 	@keyframes burg2top {
+// 		0% {}
+
+// 		20% {
+// 			margin-top: 0em;
+// 			transform: rotate(0deg);
+// 		}
+
+// 		60% {
+// 			margin-top: 0em;
+// 			transform: rotate(55deg);
+// 		}
+
+// 		100% {
+// 			margin-top: 0em;
+// 			transform: rotate(45deg);
+// 		}
+// 	}
+
+// 	@keyframes burg2bottom {
+// 		0% {}
+
+// 		20% {
+// 			margin-top: 0em;
+// 			transform: rotate(0deg);
+// 		}
+
+// 		60% {
+// 			margin-top: 0em;
+// 			transform: rotate(-55deg);
+// 		}
+
+// 		100% {
+// 			margin-top: 0em;
+// 			transform: rotate(-45deg);
+// 		}
+// 	}
+
+// 	@keyframes burg2topReset {
+// 		0% {
+// 			margin-top: 0em;
+// 			transform: rotate(45deg);
+// 		}
+
+// 		20% {
+// 			transform: rotate(0deg);
+// 		}
+
+// 		60% {
+// 			margin-top: 1.2em;
+// 			transform: rotate(0deg);
+// 		}
+
+// 		100% {
+// 			margin-top: .8em;
+// 			transform: rotate(0deg);
+// 		}
+// 	}
+
+// 	@keyframes burg2bottomReset {
+// 		0% {
+// 			margin-top: 0em;
+// 			transform: rotate(-45deg);
+// 		}
+
+// 		20% {
+// 			transform: rotate(0deg);
+// 		}
+
+// 		60% {
+// 			margin-top: -1.2em;
+// 			transform: rotate(0deg);
+// 		}
+
+// 		100% {
+// 			margin-top: -.8em;
+// 			transform: rotate(0deg);
+// 		}
+// 	}
+// }
+
+// .burger-nav {
+// 	display: none;
+// }
+
+@media (max-width: 530px) {
+	.header__top {
+		display: flex;
+		justify-content: space-between;
+	}
+	.header__top-menu {
+		display: none;
+	}
+}
+
+// 	.burger {
+// 			display: block;
+// 			&-nav {
+// 			display: block;
+// 			position: fixed;
+// 			top: 0;
+// 			right: 0;
+// 			width: 100%;
+// 			height: 100%;
+// 			background: #464655;
+// 			// background: #202945;
+// 			clip-path: circle(0px at top right);
+// 			transition: clip-path ease-in-out 400ms;
+// 			z-index: 3;
+// 			overflow: auto;
+// 				&::before {
+// 					content: '';
+// 					position: fixed;
+// 					width: 100%;
+// 					top: 0;
+// 					left: 0;
+// 					height: rem(72);
+// 				}
+// 		}
+// 	}
+// 	.burger-nav {
+// 		&__open {
+// 			clip-path: circle(250% at top right);
+// 			display: block;
+// 		}
+		
+// 		& ul {
+// 			margin-top: 72px;
+// 			padding: 0;
+// 			list-style: none;
+// 		}
+		
+// 		& li {
+// 			border-bottom: 2px solid #575766;
+// 		}
+		
+// 		& li:last-child {
+// 			border-bottom: none;
+// 		}
+		
+// 		& a {
+// 			color: #EBEBD3;
+// 			display: block;
+// 			padding: 2em 4em 2em 1.5em;
+// 			text-transform: uppercase;
+// 			text-decoration: none;
+// 		}
+		
+// 		& a:hover,
+// 		& a:focus {
+// 			background: #E4B363;
+// 			// color: #464655;
+// 			color: #75757b;
+// 		}
+// 	}
+// }
+
+
+
+// It actually starts here
+// https: //codepen.io/breadz/pen/zrMRoo
+
+$menu-bg: #DE4152;
+$menu-color: #ffffff;
+$menu-font-size: 2.5rem;
+$menu-zindex: 3;
+$hamburger-color: #fff;
+$hamburger-width: 50px;
+$hamburger-height: 50px;
+$hamburger-zindex: $menu-zindex + 10;
+#menu {
+	display: none;
+}
+.toggle-menu {
+	display: none;
+}
+
+
+@media (max-width: 530px) {
+
+#menu {
+	display: block;
+	background-color: $menu-bg;
+	height: 100%;
+	left: 0;
+	opacity: 0;
+	overflow: hidden;
+	position: fixed;
+	// text-align: center;
+	top: 0;
+	transition: all 0.7s ease-in-out;
+	// For some sweet fadez
+	visibility: hidden;
+	width: 100%;
+	// z-index: $menu-zindex;
+	z-index: -1;
+
+	&.open {
+		display: block;
+		opacity: 1;
+		visibility: visible;
+
+		@for $i from 1 through 10 {
+			li:nth-child(#{$i}) {
+				animation-delay: $i*0.1s;
+			}
+		}
+
+		li {
+			-webkit-animation-duration: 1s;
+			animation-duration: 1.0s;
+			-webkit-animation-fill-mode: both;
+			animation-fill-mode: both;
+			animation-name: fadeInUp;
+		}
+		@keyframes fadeInUp {
+			from {
+				opacity: 0;
+				-webkit-transform: translate3d(0, 100%, 0);
+				transform: translate3d(0, 100%, 0);
+			}
+
+			to {
+				opacity: 1;
+				-webkit-transform: none;
+				transform: none;
+			}
+		}
+	}
+
+	ul {
+		&:hover {
+			a {
+				opacity: 0.5;
+				border: 1px solid black;
+			}
+		}
+
+		a {
+			// Stops it being a twitchy mess in chrome :pray:
+			// https://www.binarymoon.co.uk/2014/02/fixing-css-transitions-in-google-chrome/
+			-webkit-transform: translateZ(0);
+			transition: opacity 0.3s ease-in-out;
+
+			&:hover {
+				opacity: 1;
+			}
+
+			
+
+
+
+
+		}
+	}
+	
+	.main-nav {
+		position: relative;
+		top: 50%;
+		transform: translateY(-50%);
+		display: flex;
+
+		& ul {
+			list-style: none;
+			margin: 0px;
+			padding: 0;
+
+		}
+
+		a {
+			color: $menu-color;
+			display: block;
+			font-size: $menu-font-size;
+			font-weight: bold;
+			padding: 1rem 1rem;
+			text-decoration: none;
+			text-transform: uppercase;
+		}
+			
+		// li:hover,
+		// li:focus {
+		// 	background-color: #fff;
+		// 	.top-menu__submenu {
+		// 		display: block;
+		// 		opacity: 1;
+		// 		visibility: visible;
+		// 		// transform: translate(150%, 30%);
+		// 		pointer-events: all;
+		// 		transition: all 0.8s ease 0s;
+		// 		top: 50%;
+		// 		left: 50%;
+		// 	}
+		// }
+
+		&:first {
+			padding-top: 0;
+		}
+		
+	}
+	.main-nav > li.open {
+
+	
+	.top-menu__submenu {
+	display: block;
+	display: flex;
+	opacity: 1;
+	visibility: visible;
+	position: absolute;
+	top: 100%;
+	// @include adaptiveValue("top", 65, 40);
+	left: 0;
+	width: 200px;
+	// @include adaptiveValue("width", 200, 60);
+	// @include adaptiveValue("heigth", 200, 10);
+	padding: 10px;
+	height: 70px;
+	border-radius: 2px;
+	// background-color: rgb(238, 241, 242);
+	background: rgba(238, 241, 242, 1);
+	// z-index: 14;
+
+	& li:first-child:after {
+		content: '';
+		position: absolute;
+		top: 50%;
+		left: 0;
+		width: 100%;
+		height: 2px;
+		background-color: rgba(198, 191, 191, 0.4);
+	}
+}
+
+}
+	
+}
+
+
+// Hamburger menu toggler stuff below
+.toggle-menu {
+	// display: block;
+	// background-color: transparent;
+	border: none;
+	cursor: pointer;
+	display: inline-block;
+	float: right;
+	height: $hamburger-height;
+	outline: none;
+	padding: 0;
+	pointer-events: initial;
+	position: relative;
+	vertical-align: middle;
+	width: $hamburger-width;
+	z-index: $hamburger-zindex;
+
+	span {
+		background-color: $hamburger-color;
+		content: "";
+		display: block;
+		height: 2px;
+		left: calc(50% - 13px);
+		position: absolute;
+		top: calc(50% - 1px);
+		// transform-origin: 50% 50%;
+		transition: background-color 0.2s ease-in-out, top 0.2s 0.2s ease-out, transform 0.2s linear;
+		width: 26px;
+		z-index: $hamburger-zindex;
+
+		&:before,
+		&:after {
+			background-color: $hamburger-color;
+			content: "";
+			display: block;
+			height: 2px;
+			position: absolute;
+			transform-origin: 50% 50%;
+			transition: background-color 0.2s ease-in-out, top 0.2s 0.2s ease-out, transform 0.2s linear;
+			width: 26px;
+		}
+
+		&:before {
+			top: 7px;
+		}
+
+		&:after {
+			top: -7px;
+		}
+	}
+
+	&.active {
+		span {
+			// z-index: $hamburger-zindex;
+			background-color: transparent;
+			transition: background 0.2s ease-out;
+
+			&:before,
+			&:after {
+				// transition: top 0.2s ease-out, transform 0.2s 0.2s ease-out;
+			}
+
+			&:before {
+				// top: 0;
+				// transform: rotate3d(0, 0, 1, -45deg);
+				transform: rotate(-45deg);
+			}
+
+			&:after {
+				// top: 0;
+				// transform: rotate3d(0, 0, 1, 45deg);
+				transform: rotate(45deg);
+			}
+		}
+	}
+}
+}
 //====================================================================================================
 
 //Burger

@@ -1,0 +1,35 @@
+Смена темы
+
+<a href="" class="themetoogle">
+							<span class="material-symbols-outlined">
+							wb_sunny
+							</span>
+						</a>
+
+===
+
+JAVASCRIPT
+// Dark Theme
+document.querySelector('.themetoogle').addEventListener('click', (event) => {
+    event.preventDefault();
+    if (localStorage.getItem('theme') === 'dark') {
+        localStorage.removeItem('theme');
+    }
+    else {
+        localStorage.setItem('theme', 'dark');
+    }
+    addDarkClassToHTML();
+});
+function addDarkClassToHTML () {
+    try {
+        if (localStorage.getItem('theme') === 'dark') {
+            document.querySelector('html').classList.add('dark');
+            document.querySelector('.themetoogle span').textContent = 'dark_mode';
+        }
+        else {
+            document.querySelector('html').classList.remove('dark');
+            document.querySelector('.themetoogle span').textContent = 'wb_sunny';
+        }
+    } catch (err) { }
+}
+addDarkClassToHTML();

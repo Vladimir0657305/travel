@@ -1,0 +1,63 @@
+// Animation
+const animItems = document.querySelectorAll('._anim-items');
+if (animItems.length > 0) {
+    window.addEventListener('scroll', animOnScroll);
+    function animOnScroll() {
+        for (let index = 0; index < animItems.length; index++) {
+            const animItem = animItems[index];
+            const animItemHeight = animItem.offsetHeight;
+            const animItemOffset = offset(animItem).top;
+            const animStart = 4;
+
+            let animItemPoint = window.innerHeight - animItemHeight / animStart;
+            if (animItemHeight > window.innerHeight) {
+                animItemPoint = window.innerHeight - window.innerHeight / animStart;
+            }
+
+            if ((pageYOffset > animItemOffset - animItemPoint) && pageYOffset < (animItemOffset + animItemHeight)) {
+                animItem.classList.add('_activetextmain');
+            } else {
+                if (!animItem.classList.contains('_anim-no-hide')) {
+                    animItem.classList.remove('_activetextmain');
+                }
+            }
+        }
+    }
+    function offset(el) {
+        const rect = el.getBoundingClientRect(),
+            scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
+            scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        return { top: rect.top + scrollTop, left: rect.left + scrollLeft }
+    }
+
+    setTimeout(() => {
+        animOnScroll();
+    }, 300);
+}
+
+
+===
+HTML
+<div class="products-main__block _anim-items">
+                    <p class="products-main__title title _anim-show">Our</p>
+                    <span class="products-main__span _anim-show">Products</span>
+                </div>
+
+CSS
+.products-main__title {
+        transform: translate(-150%, 0px);
+        transition: all 0.3s ease 0;
+        &._activetextmain {
+            transform: translate(0, 0);
+        }
+
+===
+ИЛИ
+transform: scale(0);
+    transition: all 0.8s ease 0;
+    &._activetextmain {
+        transform: scale(1);
+        
+    }
+
+

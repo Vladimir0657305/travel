@@ -73,22 +73,6 @@
 	}
 }
 
-// @media (min-wigth: 767px) {
-// 	.top-menu__submenu {
-// 		display: flex;
-// 		align-items: center;
-// 		transform: translate(0, 10%);
-// 		opacity: 0;
-// 		visibility: hidden;
-// 		pointer-events: none;
-// 		transition: all 0.8s ease 0s;
-// 	}
-
-// 	.top-menu__submenu li {
-// 	}
-// }
-
-
 .top-menu__link span {
 }
 
@@ -192,174 +176,6 @@
 
 // =======================================================================================
 
-
-
-
-
-
-// https: //codepen.io/EricPorter/pen/RwZGoBR
-// .burger {
-// 	--font-size: rem(); // Scale is using font-size in rems;
-// 	--color1: #000;
-// 	--borderRadius: 1em;
-// 	display: none;
-// 	font-size: var(--font-size);
-// 	cursor: pointer;
-// 	padding: 3em 1.5em; ///////////////// touch area size
-	
-// 	&>div {
-// 		z-index: 6;
-// 		width: 3em;
-// 		height: 0.2em;
-// 		border-radius: var(--borderRadius);
-// 		background: var(--color1);
-
-// 		&::before,
-// 		&::after {
-// 			z-index: 6;
-// 			transition: font-size 0s;
-// 			content: "";
-// 			display: block;
-// 			position: absolute;
-// 			width: 3em;
-// 			height: 0.2em;
-// 			background: var(--color1);
-// 			border-radius: var(--borderRadius);
-// 		}
-
-// 		&::before {
-// 			margin-top: -.8em;
-// 		}
-
-// 		&::after {
-// 			margin-top: .8em;
-// 		}
-// 	}
-// }
-// .burger2 {
-// 	&>div {
-// 		// transition: background 0.4s, font-size 0s;
-
-// 		&::before,
-// 		&::after {
-// 			transition: font-size 0s;
-// 			transform-origin: center center;
-// 		}
-// 	}
-
-// 	&.toggled {
-// 		>div::before {
-// 			animation: burg2top 0.4s linear forwards;
-// 		}
-
-// 		>div {
-// 			background: transparent;
-// 		}
-
-// 		>div::after {
-// 			animation: burg2bottom 0.4s linear forwards;
-// 		}
-// 	}
-
-// 	&.unToggled {
-// 		>div::before {
-// 			animation: burg2topReset 0.4s linear forwards;
-// 		}
-
-// 		>div {
-// 			background: var(--color1);
-// 		}
-
-// 		>div::after {
-// 			animation: burg2bottomReset 0.4s linear forwards;
-// 		}
-// 	}
-
-// 	@keyframes burg2top {
-// 		0% {}
-
-// 		20% {
-// 			margin-top: 0em;
-// 			transform: rotate(0deg);
-// 		}
-
-// 		60% {
-// 			margin-top: 0em;
-// 			transform: rotate(55deg);
-// 		}
-
-// 		100% {
-// 			margin-top: 0em;
-// 			transform: rotate(45deg);
-// 		}
-// 	}
-
-// 	@keyframes burg2bottom {
-// 		0% {}
-
-// 		20% {
-// 			margin-top: 0em;
-// 			transform: rotate(0deg);
-// 		}
-
-// 		60% {
-// 			margin-top: 0em;
-// 			transform: rotate(-55deg);
-// 		}
-
-// 		100% {
-// 			margin-top: 0em;
-// 			transform: rotate(-45deg);
-// 		}
-// 	}
-
-// 	@keyframes burg2topReset {
-// 		0% {
-// 			margin-top: 0em;
-// 			transform: rotate(45deg);
-// 		}
-
-// 		20% {
-// 			transform: rotate(0deg);
-// 		}
-
-// 		60% {
-// 			margin-top: 1.2em;
-// 			transform: rotate(0deg);
-// 		}
-
-// 		100% {
-// 			margin-top: .8em;
-// 			transform: rotate(0deg);
-// 		}
-// 	}
-
-// 	@keyframes burg2bottomReset {
-// 		0% {
-// 			margin-top: 0em;
-// 			transform: rotate(-45deg);
-// 		}
-
-// 		20% {
-// 			transform: rotate(0deg);
-// 		}
-
-// 		60% {
-// 			margin-top: -1.2em;
-// 			transform: rotate(0deg);
-// 		}
-
-// 		100% {
-// 			margin-top: -.8em;
-// 			transform: rotate(0deg);
-// 		}
-// 	}
-// }
-
-// .burger-nav {
-// 	display: none;
-// }
-
 @media (max-width: 530px) {
 	.header__top {
 		display: flex;
@@ -369,70 +185,6 @@
 		display: none;
 	}
 }
-
-// 	.burger {
-// 			display: block;
-// 			&-nav {
-// 			display: block;
-// 			position: fixed;
-// 			top: 0;
-// 			right: 0;
-// 			width: 100%;
-// 			height: 100%;
-// 			background: #464655;
-// 			// background: #202945;
-// 			clip-path: circle(0px at top right);
-// 			transition: clip-path ease-in-out 400ms;
-// 			z-index: 3;
-// 			overflow: auto;
-// 				&::before {
-// 					content: '';
-// 					position: fixed;
-// 					width: 100%;
-// 					top: 0;
-// 					left: 0;
-// 					height: rem(72);
-// 				}
-// 		}
-// 	}
-// 	.burger-nav {
-// 		&__open {
-// 			clip-path: circle(250% at top right);
-// 			display: block;
-// 		}
-		
-// 		& ul {
-// 			margin-top: 72px;
-// 			padding: 0;
-// 			list-style: none;
-// 		}
-		
-// 		& li {
-// 			border-bottom: 2px solid #575766;
-// 		}
-		
-// 		& li:last-child {
-// 			border-bottom: none;
-// 		}
-		
-// 		& a {
-// 			color: #EBEBD3;
-// 			display: block;
-// 			padding: 2em 4em 2em 1.5em;
-// 			text-transform: uppercase;
-// 			text-decoration: none;
-// 		}
-		
-// 		& a:hover,
-// 		& a:focus {
-// 			background: #E4B363;
-// 			// color: #464655;
-// 			color: #75757b;
-// 		}
-// 	}
-// }
-
-
 
 // It actually starts here
 // https: //codepen.io/breadz/pen/zrMRoo
@@ -444,33 +196,36 @@ $menu-zindex: 3;
 $hamburger-color: #fff;
 $hamburger-width: 50px;
 $hamburger-height: 50px;
-$hamburger-zindex: $menu-zindex + 10;
-#menu {
-	display: none;
-}
-.toggle-menu {
-	display: none;
-}
+$hamburger-zindex: $menu-zindex;
 
+.toggle-menu {
+
+}
+.main-nav {
+	display: none;
+}
 
 @media (max-width: 530px) {
 
-#menu {
+.main-nav {
 	display: block;
-	background-color: $menu-bg;
 	height: 100%;
+	width: 100%;
+	top: 0;
 	left: 0;
 	opacity: 0;
 	overflow: hidden;
 	position: fixed;
-	// text-align: center;
-	top: 0;
+	font-size: $menu-font-size;
+	font-weight: bold;
+	padding-top: 4rem;
+	padding-left: 1rem;
 	transition: all 0.7s ease-in-out;
 	// For some sweet fadez
 	visibility: hidden;
-	width: 100%;
-	// z-index: $menu-zindex;
-	z-index: -1;
+	background-color: $menu-bg;
+	z-index: $menu-zindex;
+	overflow: auto;
 
 	&.open {
 		display: block;
@@ -506,10 +261,18 @@ $hamburger-zindex: $menu-zindex + 10;
 	}
 
 	ul {
+		list-style: none;
+		margin-top: 0px;
+		padding: 0;
+		@include adaptiveValue("column-gap", 60, 20);
+
+		li {
+			margin-top: 1.5rem;
+		}
+
 		&:hover {
 			a {
 				opacity: 0.5;
-				border: 1px solid black;
 			}
 		}
 
@@ -517,117 +280,77 @@ $hamburger-zindex: $menu-zindex + 10;
 			// Stops it being a twitchy mess in chrome :pray:
 			// https://www.binarymoon.co.uk/2014/02/fixing-css-transitions-in-google-chrome/
 			-webkit-transform: translateZ(0);
-			transition: opacity 0.3s ease-in-out;
+			transition: opacity .3s ease-in-out;
 
 			&:hover {
 				opacity: 1;
 			}
-
-			
-
-
-
-
 		}
 	}
 	
-	.main-nav {
-		position: relative;
-		top: 50%;
-		transform: translateY(-50%);
-		display: flex;
-
-		& ul {
-			list-style: none;
-			margin: 0px;
-			padding: 0;
-
-		}
+	
 
 		a {
-			color: $menu-color;
-			display: block;
-			font-size: $menu-font-size;
-			font-weight: bold;
-			padding: 1rem 1rem;
 			text-decoration: none;
 			text-transform: uppercase;
 		}
-			
-		// li:hover,
-		// li:focus {
-		// 	background-color: #fff;
-		// 	.top-menu__submenu {
-		// 		display: block;
-		// 		opacity: 1;
-		// 		visibility: visible;
-		// 		// transform: translate(150%, 30%);
-		// 		pointer-events: all;
-		// 		transition: all 0.8s ease 0s;
-		// 		top: 50%;
-		// 		left: 50%;
-		// 	}
-		// }
 
-		&:first {
-			padding-top: 0;
+		.main-nav__item._notactive {
+			.main-nav__submenu {
+					display: none;
+				}
+			}
+
+		.open {
+			.main-nav__submenu {
+				display: block;
+				opacity: 1;
+				visibility: visible;
+				font-size: 2rem;
+				margin-left: 2rem;
+				height: 8rem; // высота есть кол-во пунктов меню с размером 2rem (т.е. 2*2=4rem) и еще * на 2 = 8rem
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content:start;
+				column-gap: 1rem;
+				color: $menu-color;
+				background: #e67984;
+				border-radius: .5rem;
+				position: relative;
+
+				& :not(:last-child)::after{
+					content: "";
+					position: absolute;
+					top: 130%;
+						left: -200%;
+						width: 800px;
+						// flex: 1 1 auto;
+						height: 2px;
+						background-color: $menu-bg;
+				}
+			}
 		}
-		
-	}
-	.main-nav > li.open {
-
-	
-	.top-menu__submenu {
-	display: block;
-	display: flex;
-	opacity: 1;
-	visibility: visible;
-	position: absolute;
-	top: 100%;
-	// @include adaptiveValue("top", 65, 40);
-	left: 0;
-	width: 200px;
-	// @include adaptiveValue("width", 200, 60);
-	// @include adaptiveValue("heigth", 200, 10);
-	padding: 10px;
-	height: 70px;
-	border-radius: 2px;
-	// background-color: rgb(238, 241, 242);
-	background: rgba(238, 241, 242, 1);
-	// z-index: 14;
-
-	& li:first-child:after {
-		content: '';
-		position: absolute;
-		top: 50%;
-		left: 0;
-		width: 100%;
-		height: 2px;
-		background-color: rgba(198, 191, 191, 0.4);
-	}
-}
-
-}
-	
 }
 
 
 // Hamburger menu toggler stuff below
 .toggle-menu {
-	// display: block;
-	// background-color: transparent;
+	top: 10px;
+	background-color: transparent;
 	border: none;
 	cursor: pointer;
 	display: inline-block;
 	float: right;
-	height: $hamburger-height;
-	outline: none;
+	// outline: none;
 	padding: 0;
 	pointer-events: initial;
+	pointer-events:all;
 	position: relative;
 	vertical-align: middle;
+	height: $hamburger-height;
 	width: $hamburger-width;
-	z-index: $hamburger-zindex;
+	z-index: $hamburger-zindex+10;
 
 	span {
 		background-color: $hamburger-color;
@@ -637,10 +360,10 @@ $hamburger-zindex: $menu-zindex + 10;
 		left: calc(50% - 13px);
 		position: absolute;
 		top: calc(50% - 1px);
-		// transform-origin: 50% 50%;
+		transform-origin: 50% 50%;
 		transition: background-color 0.2s ease-in-out, top 0.2s 0.2s ease-out, transform 0.2s linear;
 		width: 26px;
-		z-index: $hamburger-zindex;
+		// z-index: $hamburger-zindex+10;
 
 		&:before,
 		&:after {
@@ -665,25 +388,26 @@ $hamburger-zindex: $menu-zindex + 10;
 
 	&.active {
 		span {
-			// z-index: $hamburger-zindex;
+			display: block;
+			z-index: $hamburger-zindex;
 			background-color: transparent;
 			transition: background 0.2s ease-out;
 
 			&:before,
 			&:after {
-				// transition: top 0.2s ease-out, transform 0.2s 0.2s ease-out;
+				transition: top 0.2s ease-out, transform 0.2s 0.2s ease-out;
 			}
 
 			&:before {
-				// top: 0;
-				// transform: rotate3d(0, 0, 1, -45deg);
-				transform: rotate(-45deg);
+				top: 0;
+				transform: rotate3d(0, 0, 1, -45deg);
+				// transform: rotate(-45deg);
 			}
 
 			&:after {
-				// top: 0;
-				// transform: rotate3d(0, 0, 1, 45deg);
-				transform: rotate(45deg);
+				top: 0;
+				transform: rotate3d(0, 0, 1, 45deg);
+				// transform: rotate(45deg);
 			}
 		}
 	}
@@ -691,53 +415,3 @@ $hamburger-zindex: $menu-zindex + 10;
 }
 //====================================================================================================
 
-//Burger
-/*
-.icon-menu {
-	display: none;
-	@media (max-width: $mobile) {
-		display: block;
-		position: relative;
-		width: rem(30);
-		height: rem(18);
-		cursor: pointer;
-		z-index: 5;
-		span,
-		&::before,
-		&::after {
-			content: "";
-			transition: all 0.3s ease 0s;
-			right: 0;
-			position: absolute;
-			width: 100%;
-			height: rem(2);
-			background-color: #000;
-		}
-		&::before {
-			top: 0;
-		}
-		&::after {
-			bottom: 0;
-		}
-		span {
-			top: calc(50% - rem(1));
-		}
-		.menu-open & {
-			span {
-				width: 0;
-			}
-			&::before,
-			&::after {
-			}
-			&::before {
-				top: calc(50% - rem(1));
-				transform: rotate(-45deg);
-			}
-			&::after {
-				bottom: calc(50% - rem(1));
-				transform: rotate(45deg);
-			}
-		}
-	}
-}
-*/

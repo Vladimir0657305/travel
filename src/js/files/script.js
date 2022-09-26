@@ -49,22 +49,22 @@ function addDarkClassToHTML() {
 addDarkClassToHTML();
 
 // Burger
-// const burg = document.querySelector('.burger');
-// burg.classList.add('unToggled');
-// burg.onclick = (() => {
-//     burg.classList.toggle('toggled');
-//     burg.classList.toggle('unToggled');
-//     document.querySelector('.burger-nav').classList.toggle('burger-nav__open');
-//     // document.querySelector('.menu-toggle').classList.toggle('open');
-//     // document.body.classList.toggle('._lock');
-// })
-
 const burg = document.querySelector('.toggle-menu');
-// burg.classList.add('unToggled');
 burg.onclick = (() => {
     burg.classList.toggle('active');
-    // burg.classList.toggle('unToggled');
-    document.querySelector('#menu').classList.toggle('open');
-    // document.querySelector('.menu-toggle').classList.toggle('open');
+    document.querySelector('.main-nav').classList.toggle('open');
     // document.body.classList.toggle('._lock');
 })
+
+let menuArrows = document.querySelectorAll('.main-nav__item');
+
+if (menuArrows.length > 0) {
+    for (let index = 0; index < menuArrows.length; index++) {
+        const menuArrow = menuArrows[index];
+        menuArrow.addEventListener("click", function (e) {
+            menuArrow.classList.toggle('open');
+            menuArrow.classList.toggle('_notactive');
+        });
+    }
+}
+// ===================================================================

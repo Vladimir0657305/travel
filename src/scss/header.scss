@@ -193,13 +193,15 @@ $menu-bg: #DE4152;
 $menu-color: #ffffff;
 $menu-font-size: 2.5rem;
 $menu-zindex: 3;
-$hamburger-color: #fff;
+// $hamburger-color: #fff;
+$hamburger-color: var(--hamburg-color);
+
 $hamburger-width: 50px;
 $hamburger-height: 50px;
 $hamburger-zindex: $menu-zindex;
 
 .toggle-menu {
-
+	
 }
 .main-nav {
 	display: none;
@@ -217,7 +219,7 @@ $hamburger-zindex: $menu-zindex;
 	overflow: hidden;
 	position: fixed;
 	font-size: $menu-font-size;
-	font-weight: bold;
+	font-weight: 400;
 	padding-top: 4rem;
 	padding-left: 1rem;
 	transition: all 0.7s ease-in-out;

@@ -265,8 +265,8 @@
 	transform: scale(0.33);
 }
 .swiper-pagination-bullet {
-	width: var(--swiper-pagination-bullet-width, var(--swiper-pagination-bullet-size, 8px));
-	height: var(--swiper-pagination-bullet-height, var(--swiper-pagination-bullet-size, 8px));
+	width: var(--swiper-pagination-bullet-width, var(--swiper-pagination-bullet-size, 20px));
+	height: var(--swiper-pagination-bullet-height, var(--swiper-pagination-bullet-size, 20px));
 	display: inline-block;
 	border-radius: 50%;
 	background: var(--swiper-pagination-bullet-inactive-color, #000);

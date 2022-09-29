@@ -30,6 +30,8 @@ import "../../scss/libs/swiper.scss";
 // 	EL_caption.innerHTML = EL_currentSlide.dataset.caption;
 // }
 // removeEffect();
+const progressBar = document.querySelector(".progress");
+const swiper = "";
 // Инициализация слайдеров
 // const swpr_text = document.querySelector(".swiper-products__text");
 function initSliders() {
@@ -37,7 +39,7 @@ function initSliders() {
 	// Проверяем, есть ли слайдер на стронице
 	if (document.querySelector('.swiper')) { // Указываем скласс нужного слайдера
 		// Создаем слайдер
-		const swiper = new Swiper('.swiper', { // Указываем скласс нужного слайдера
+		swiper = new Swiper('.swiper', { // Указываем скласс нужного слайдера
 			// Подключаем модули слайдера
 			// для конкретного случая
 			modules: [Navigation, Pagination, Autoplay, EffectFade],
@@ -61,10 +63,10 @@ function initSliders() {
 				crossFade: true
 			},
 
-			// autoplay: {
-			// 	delay: 5800,
-			// 	disableOnInteraction: false,
-			// },
+			autoplay: {
+				delay: 5800,
+				disableOnInteraction: false,
+			},
 			
 
 			// Пагинация
@@ -120,25 +122,15 @@ function initSliders() {
 			on: {
 				// init: doSomethingWithActiveSlide,
 				// slideChange: doSomethingWithActiveSlide
-
+				slideChange: function () {
+					progressBar.style.animation = "none";
+					void progressBar.offsetWidth; // Triggers Reflow
+					progressBar.style.animation = null;
+					// progressBar.style.animationPlayState = "paused"; // Optional
+					}
 			}
 			
 		});
-		// swiper.on('slideChangeStart', function () {
-		// 	swpr_text.classList.add('_activetextmain');
-		// 		});
-		// swiper.on('slideChangeEnd', function () {
-		// 	swpr_text.classList.remove('_activetextmain');
-		// });
-		// swiper.on('slideChange', function () {
-		// 	swpr_text.classList.add('_activetextmain');
-		// 	swpr_text.classList.remove('_notactivetextmain');
-		// 	setTimeout(function () {
-		// 		swpr_text.classList.remove('_activetextmain');
-		// 		swpr_text.classList.add('_notactivetextmain')
-		// 	}, 1000)
-		// 	});
-		
 	}
 }
 // Скролл на базе слайдера (по классу swiper_scroll для оболочки слайдера)
@@ -178,3 +170,34 @@ window.addEventListener("load", function (e) {
 	//initSlidersScroll();
 });
 
+progressBar.addEventListener("animationend", myEndFunction);
+
+// Retrigger Animation on Slide Change
+function myEndFunction() {
+	swiper.slideNext();
+	progressBar.style.animation = "none";
+	void progressBar.offsetWidth; // Triggers Reflow
+	progressBar.style.animation = null;
+}
+
+// Reset Progress Bar On Slide Change
+// swiper.on("slideChange", function () {
+// 	progressBar.style.animation = "none";
+// 	void progressBar.offsetWidth; // Triggers Reflow
+// 	progressBar.style.animation = null;
+// 	progressBar.style.animationPlayState = "paused"; // Optional
+// });
+
+// Pause Carousel/Progress Bar On Hover
+
+document.querySelectorAll(".swiper, .carousel-progress").forEach((item) => {
+	item.addEventListener("mouseenter", function () {
+		progressBar.style.animationPlayState = "paused";
+	});
+});
+
+document.querySelectorAll(".swiper, .carousel-progress").forEach((item) => {
+	item.addEventListener("mouseleave", function () {
+		progressBar.style.animationPlayState = "running";
+	});
+});

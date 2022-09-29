@@ -24,7 +24,7 @@ import "../../scss/libs/swiper.scss";
 // import 'swiper/css';
 
 const progressBar = document.querySelector(".progress");
-const swiper = "";
+let swiper = "";
 // Инициализация слайдеров
 
 function initSliders() {
@@ -32,7 +32,7 @@ function initSliders() {
 	// Проверяем, есть ли слайдер на стронице
 	if (document.querySelector('.swiper')) { // Указываем скласс нужного слайдера
 		// Создаем слайдер
-		swiper = new Swiper('.swiper-container.main__slider', { // Указываем скласс нужного слайдера
+		swiper = new Swiper('.main__slider', { // Указываем скласс нужного слайдера
 			// Подключаем модули слайдера
 			// для конкретного случая
 			modules: [Navigation, Pagination, Autoplay, EffectFade],
@@ -63,7 +63,7 @@ function initSliders() {
 			
 			pagination: {
 				// type: 'progressbar',
-				el: '.swiper-pagination',
+				el: '.swiper-pagination_main',
 				clickable: true,
 				
 			},
@@ -76,8 +76,8 @@ function initSliders() {
 			
 			// Кнопки "влево/вправо"
 			navigation: {
-				prevEl: '.swiper-button-prev',
-				nextEl: '.swiper-button-next',
+				prevEl: '.swiper-button-prev_main',
+				nextEl: '.swiper-button-next_main',
 			},
 
 			// События
@@ -95,15 +95,19 @@ function initSliders() {
 		});
 	}
 	// === Feature Swiper Start ===================================================================
-	if (document.querySelector('.swiper-container.feature__swiper')) {
-		const featureSlider = new Swiper('.feature__swiper', { 
-			modules: [Navigation, Pagination, Autoplay,],
-			// observer: true,
-			// observeParents: true,
-			slidesPerView: 3,
-			spaceBetween: auto,
-			autoHeight: true,
-			speed: 1000,
+	// if (document.querySelector('.feature__swiper')) {
+	// const largeSlider = document.querySelector(".feature-wrapper");
+	// const prev_feature = document.querySelector(".swiper-button-prev_feature");
+	
+		const featureSlider = new Swiper('.feature__slider', { 
+			modules: [Navigation, Pagination, Autoplay],
+			observer: true,
+			observeParents: true,
+			slidesPerView: 4,
+			spaceBetween: 30,
+			autoHeight: false,
+			speed: 400,
+			
 			// onSlideNextStart: function (swiper) {
 			// 	swiper.appendSlide([
 			// 		'<div class="swiper-slide">Slide ' + (++appendNumber) + '</div>',
@@ -129,58 +133,65 @@ function initSliders() {
 			// 	crossFade: true
 			// },
 			autoplay: {
-				delay: 1000,
+				delay: 3000,
 				disableOnInteraction: false,
 			},
 			grabCursor: true,
 			// Пагинация
 			pagination: {
+				// el: '.swiper-pagination',
 				el: '.swiper-pagination',
 				clickable: true,
-				
+				// renderBullet: function (index, className) {
+					// console.log('--->', className);
+				// 	var color = this.$el[0].children[0].children[index].dataset.color;
+				// 	console.log(color);
+					// return '<span class="swiper-pagination__feature-bullet"></span>';
+				// }
+			
 			},
 			
 			// Кнопки "влево/вправо"
 			navigation: {
-				prevEl: '.swiper-button-prev',
-				nextEl: '.swiper-button-next',
+				prevEl: '#swiper-button-prev__feature',
+				nextEl: '.swiper-button-next__feature',
 			},
 
 			// События
 			on: {}
 		});
-	}
+	// }
 }
 
 // Скролл на базе слайдера (по классу swiper_scroll для оболочки слайдера)
-function initSlidersScroll() {
-	let sliderScrollItems = document.querySelectorAll('.swiper_scroll');
-	if (sliderScrollItems.length > 0) {
-		for (let index = 0; index < sliderScrollItems.length; index++) {
-			const sliderScrollItem = sliderScrollItems[index];
-			const sliderScrollBar = sliderScrollItem.querySelector('.swiper-scrollbar');
-			const sliderScroll = new Swiper(sliderScrollItem, {
-				observer: true,
-				observeParents: true,
-				direction: 'vertical',
-				slidesPerView: 'auto',
-				freeMode: {
-					enabled: true,
-				},
-				scrollbar: {
-					el: sliderScrollBar,
-					draggable: true,
-					snapOnRelease: false
-				},
-				mousewheel: {
-					releaseOnEdges: true,
-				},
-			});
-			sliderScroll.scrollbar.updateSize();
-		}
-	}
+// function initSlidersScroll() {
+// 	let sliderScrollItems = document.querySelectorAll('.swiper_scroll');
+// 	if (sliderScrollItems.length > 0) {
+// 		for (let index = 0; index < sliderScrollItems.length; index++) {
+// 			const sliderScrollItem = sliderScrollItems[index];
+// 			const sliderScrollBar = sliderScrollItem.querySelector('.swiper-scrollbar');
+// 			const sliderScroll = new Swiper(sliderScrollItem, {
+// 				observer: true,
+// 				observeParents: true,
+// 				direction: 'vertical',
+// 				slidesPerView: 'auto',
+// 				freeMode: {
+// 					enabled: true,
+// 				},
+// 				scrollbar: {
+// 					el: sliderScrollBar,
+// 					draggable: true,
+// 					snapOnRelease: false
+// 				},
+// 				mousewheel: {
+// 					releaseOnEdges: true,
+// 				},
+// 			});
+// 			sliderScroll.scrollbar.updateSize();
+// 		}
+// 	}
 	
-}
+// }
 
 window.addEventListener("load", function (e) {
 	// Запуск инициализации слайдеров
@@ -193,7 +204,7 @@ progressBar.addEventListener("animationend", myEndFunction);
 
 // Retrigger Animation on Slide Change
 function myEndFunction() {
-	swiper.slideNext();
+	// swiper.slideNext();
 	progressBar.style.animation = "none";
 	void progressBar.offsetWidth; // Triggers Reflow
 	progressBar.style.animation = null;

@@ -9,33 +9,41 @@
 
 .swiper-wrapper {
     width: 100%;
+    // height: 913px;
     font-family: $fontFamily;
+    // margin-top: 70px;
 }
 // ============================================ Swiper control ===============================
-.swiper-button-prev:after,
-.swiper-button-next:after {
+.swiper-button-prev_main:after,
+.swiper-button-next_main:after {
     font-size: 26px !important;
     font-weight: bold !important;
     // color: #333;
     transition: 0.3s;
 }
-.swiper-button-prev:hover:after,
-.swiper-button-next:hover:after {
+.swiper-button-prev_main:hover:after,
+.swiper-button-next_main:hover:after {
     opacity: 0.7;
+    color: red;
 }
-// .swiper-pagination-bullets {
-//     bottom: 28px !important;
-// }
-// .swiper-pagination-bullet {
-//     width: 10px !important;
-//     height: 10px !important;
+.swiper-pagination-bullets {
+    bottom: 28px !important;
+}
+// .swiper-pagination .swiper-pagination_main-bullet {
+//     width: 28px !important;
+//     height: 28px !important;
 //     border: 2px solid #fff;
 //     border-radius: 50% !important;
 //     background-color: transparent !important;
+//     background-color: yellow!important;
 //     opacity: 1 !important;
+//     bottom: 28px !important;
+//     display: block;
 // }
-// .swiper-pagination-bullet-active {
-//     background-color: #fff !important;
+// .swiper-pagination .swiper-pagination_main-bullet {
+    // background-color: #fff !important;
+    // width: 28px !important;
+    // height: 28px !important;
 // }
 // ===================================== End  Swiper control =================================
 

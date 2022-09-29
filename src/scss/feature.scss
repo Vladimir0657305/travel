@@ -1,10 +1,37 @@
-.feature__swiper {
-    width: 100%;
-    height: 500px;
-    font-family:'Manrope';
+.feature-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 60px;
 }
 
-.swiper-slide__feature_image img {
+.feature-wrapper{
+    max-width: 1140px !important;
+    // @include adaptiveValue("max-width", 1140, 300);
+    height: 500px;
+    font-family:'Manrope';
+    
+}
+.feature__slider {
+    position: relative;
+    overflow: hidden;
+    max-width: 1140px;
+    height: 600px;
+    border: 1px solid red;
+}
+
+.feature-body__title {
+    // margin-top: 100px;
+    // margin: 100px 0;
+}
+
+.swiper-slide__feature-image {
+    height: 400px;
+    max-width: 1140px;
+    border: 2px solid #333;
+}
+.swiper-slide__feature-image img {
     width: 255px;
     height: 300px;
 }
@@ -12,3 +39,52 @@
 .feature-span {
     margin-top: 100px;
 }
+
+// ============================================ Swiper control ===============================
+.swiper-button-prev_feature .swiper-button-prev,
+.swiper-button-next_feature {
+    font-size: 26px !important;
+    font-weight: bold !important;
+    border: 1px solid red;
+    transition: 0.3s;
+    // margin-top: 300px;
+    // top: 50%;
+    margin-top: 100px;
+}
+.swiper-button-prev_feature::after .swiper-button-prev::after,
+.swiper-button-next_feature:after {
+    font-size: 26px !important;
+    font-weight: bold !important;
+    // color: #333;
+    transition: 0.3s;
+    // margin-top: 300px;
+    color: red !important;
+    border: 1px solid green;
+}
+.swiper-button-prev_feature:hover:after,
+.swiper-button-next_feature:hover:after {
+    opacity: 0.7;
+    color: red !important;
+    // margin-top: 300px;
+}
+.swiper-pagination-bullet {
+    // width: 28px !important;
+    // height: 28px !important;
+    // border: 2px solid #fff;
+    // border-radius: 50% !important;
+    // background-color: transparent !important;
+    // background-color: yellow !important;
+    // opacity: .1 !important;
+    // bottom: 28px !important;
+    // margin-bottom: -30px!important;
+    // display: block;
+    // bottom: 20px;
+    // left: 50%;
+    // text-align: center!important;
+}
+.swiper-pagination__feature .swiper-pagination-bullet-active {
+    color: red!important;
+    border: 1px solid black;
+}
+// ============================================ Swiper Control  End===============================
+

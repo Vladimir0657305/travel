@@ -1,10 +1,10 @@
 <!-- Оболочка слайдера -->
-<div class=" swiper-container main__slider">
+<div class="swiper-container main__slider swiper">
     <div class="carousel-progress">
         <div class="progress"></div>
     </div>
     <!-- Двигающееся часть слайдера -->
-    <div class="main__wrapper swiper-wrapper">
+    <div class=" swiper-wrapper">
         <!-- Слайд -->
 
         <div class="main__slide swiper-slide">
@@ -28,6 +28,9 @@
                 <span>Slide Two</span>
                 <span>Slide Two</span>
             </div>
+            <div class="progress-container">
+                <div class="progress-bar" id="myBar"></div>
+            </div>
         </div>
 
         <div class="main__slide swiper-slide">
@@ -37,6 +40,9 @@
             <div class="swiper-slide__text">
                 <span>Slide Three</span>
                 <span>Slide Three</span>
+            </div>
+            <div class="progress-container">
+                <div class="progress-bar" id="myBar"></div>
             </div>
         </div>
         
@@ -48,6 +54,9 @@
                 <span>Slide Four</span>
                 <span>Slide Four</span>
             </div>
+            <div class="progress-container">
+                <div class="progress-bar" id="myBar"></div>
+            </div>
         </div>
         
         <div class="main__slide swiper-slide">
@@ -58,14 +67,17 @@
                 <span>Slide Five</span>
                 <span>Slide Five</span>
             </div>
+            <div class="progress-container">
+                <div class="progress-bar" id="myBar"></div>
+            </div>
         </div>
         
     </div>
     <!-- Если нужна пагинация -->
-    <div class="swiper-pagination"></div>
+    <div class="swiper-pagination swiper-pagination_main"></div>
     <!-- Если нужна навигация (влево/вправо) -->
-    <button type="button" class="swiper-button-prev"></button>
-    <button type="button" class="swiper-button-next"></button>
+    <button type="button" class="swiper-button-prev swiper-button-prev_main"></button>
+    <button type="button" class="swiper-button-next swiper-button-next_main"></button>
     <!-- Если нужен скролбар -->
     <!-- <div class="swiper-scrollbar"></div> -->
 </div>

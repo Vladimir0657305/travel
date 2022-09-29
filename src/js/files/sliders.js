@@ -23,23 +23,16 @@ import "../../scss/libs/swiper.scss";
 // Полный набор стилей из node_modules
 // import 'swiper/css';
 
-// const EL_caption = document.querySelector(".caption");
-
-// function doSomethingWithActiveSlide() {
-// 	const EL_currentSlide = this.slides[this.activeIndex - 1];
-// 	EL_caption.innerHTML = EL_currentSlide.dataset.caption;
-// }
-// removeEffect();
 const progressBar = document.querySelector(".progress");
 const swiper = "";
 // Инициализация слайдеров
-// const swpr_text = document.querySelector(".swiper-products__text");
+
 function initSliders() {
 	// Перечень слайдеров
 	// Проверяем, есть ли слайдер на стронице
 	if (document.querySelector('.swiper')) { // Указываем скласс нужного слайдера
 		// Создаем слайдер
-		swiper = new Swiper('.swiper', { // Указываем скласс нужного слайдера
+		swiper = new Swiper('.swiper-container.main__slider', { // Указываем скласс нужного слайдера
 			// Подключаем модули слайдера
 			// для конкретного случая
 			modules: [Navigation, Pagination, Autoplay, EffectFade],
@@ -55,20 +48,17 @@ function initSliders() {
 			loop: true,
 			//preloadImages: false,
 			//lazy: true,
-
 			
 			// Эффекты
 			effect: 'fade',
 			fadeEffect: {
 				crossFade: true
 			},
-
 			autoplay: {
 				delay: 5800,
 				disableOnInteraction: false,
 			},
 			
-
 			// Пагинация
 			
 			pagination: {
@@ -78,45 +68,17 @@ function initSliders() {
 				
 			},
 			
-
 			// Скроллбар
-			
 			// scrollbar: {
 			// 	el: '.swiper-scrollbar',
 			// 	draggable: true,
 			// },
 			
-
 			// Кнопки "влево/вправо"
 			navigation: {
 				prevEl: '.swiper-button-prev',
 				nextEl: '.swiper-button-next',
 			},
-
-
-			// Брейкпоинты
-			/*
-			breakpoints: {
-				320: {
-					slidesPerView: 1,
-					spaceBetween: 0,
-					autoHeight: true,
-				},
-				768: {
-					slidesPerView: 2,
-					spaceBetween: 20,
-				},
-				992: {
-					slidesPerView: 3,
-					spaceBetween: 20,
-				},
-				1268: {
-					slidesPerView: 4,
-					spaceBetween: 30,
-				},
-			},
-			*/
-
 
 			// События
 			on: {
@@ -132,7 +94,64 @@ function initSliders() {
 			
 		});
 	}
+	// === Feature Swiper Start ===================================================================
+	if (document.querySelector('.swiper-container.feature__swiper')) {
+		const featureSlider = new Swiper('.feature__swiper', { 
+			modules: [Navigation, Pagination, Autoplay,],
+			// observer: true,
+			// observeParents: true,
+			slidesPerView: 3,
+			spaceBetween: auto,
+			autoHeight: true,
+			speed: 1000,
+			// onSlideNextStart: function (swiper) {
+			// 	swiper.appendSlide([
+			// 		'<div class="swiper-slide">Slide ' + (++appendNumber) + '</div>',
+			// 	]);
+			// },
+			loop: true,
+			loopedSlides: 4,
+			watchSlidesProgress: true,
+			watchSlidesVisibility: true,
+			hideOnClick: true,
+			grabCursor: true,
+			preventClicks: true,
+
+			//touchRatio: 0,
+			//simulateTouch: false,
+			// loop: true,
+			//preloadImages: false,
+			//lazy: true,
+			
+			// Эффекты
+			effect: 'slide',
+			// fadeEffect: {
+			// 	crossFade: true
+			// },
+			autoplay: {
+				delay: 1000,
+				disableOnInteraction: false,
+			},
+			grabCursor: true,
+			// Пагинация
+			pagination: {
+				el: '.swiper-pagination',
+				clickable: true,
+				
+			},
+			
+			// Кнопки "влево/вправо"
+			navigation: {
+				prevEl: '.swiper-button-prev',
+				nextEl: '.swiper-button-next',
+			},
+
+			// События
+			on: {}
+		});
+	}
 }
+
 // Скролл на базе слайдера (по классу swiper_scroll для оболочки слайдера)
 function initSlidersScroll() {
 	let sliderScrollItems = document.querySelectorAll('.swiper_scroll');
@@ -180,15 +199,7 @@ function myEndFunction() {
 	progressBar.style.animation = null;
 }
 
-// Reset Progress Bar On Slide Change
-// swiper.on("slideChange", function () {
-// 	progressBar.style.animation = "none";
-// 	void progressBar.offsetWidth; // Triggers Reflow
-// 	progressBar.style.animation = null;
-// 	progressBar.style.animationPlayState = "paused"; // Optional
-// });
 
-// Pause Carousel/Progress Bar On Hover
 
 document.querySelectorAll(".swiper, .carousel-progress").forEach((item) => {
 	item.addEventListener("mouseenter", function () {
@@ -201,3 +212,5 @@ document.querySelectorAll(".swiper, .carousel-progress").forEach((item) => {
 		progressBar.style.animationPlayState = "running";
 	});
 });
+
+

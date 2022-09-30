@@ -67,4 +67,73 @@ if (menuArrows.length > 0) {
         });
     }
 }
-// ===================================================================
+// ================================================================================================
+
+// ==== Hide Header on Scroll Down Show on Scroll Up ==============================================
+var c, currentScrollTop = 0,
+    menu = document.querySelector('.header');
+// Scroll Bar Indicator
+window.onscroll = function () { myFunction() };
+function myFunction() {
+    var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    var scrolled = (winScroll / height) * 100;
+    document.getElementById("myBar").style.width = scrolled + "%";
+
+    // Show Menu on Scroll Up
+    var a = document.body.scrollTop || document.documentElement.scrollTop;
+    var b = menu.offsetHeight;
+    currentScrollTop = a;
+    if (c < currentScrollTop && a > b + b) {
+        menu.classList.add("scrollUp");
+        menu.classList.remove("scrollDown");
+
+
+    }
+    else if (c > currentScrollTop && !(a <= b)) {
+        menu.classList.remove("scrollUp");
+        menu.classList.add("scrollDown");
+    }
+    c = currentScrollTop;
+}
+
+// document.querySelector('.back-to-top').onclick = () => {
+//     document.querySelector('.header').scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
+// }
+
+// Animation
+const animItems = document.querySelectorAll('._anim-items');
+if (animItems.length > 0) {
+    window.addEventListener('scroll', animOnScroll);
+    function animOnScroll() {
+        for (let index = 0; index < animItems.length; index++) {
+            const animItem = animItems[index];
+            const animItemHeight = animItem.offsetHeight;
+            const animItemOffset = offset(animItem).top;
+            const animStart = 4;
+
+            let animItemPoint = window.innerHeight - animItemHeight / animStart;
+            if (animItemHeight > window.innerHeight) {
+                animItemPoint = window.innerHeight - window.innerHeight / animStart;
+            }
+
+            if ((pageYOffset > animItemOffset - animItemPoint) && pageYOffset < (animItemOffset + animItemHeight)) {
+                animItem.classList.add('_activetextmain');
+            } else {
+                if (!animItem.classList.contains('_anim-no-hide')) {
+                    animItem.classList.remove('_activetextmain');
+                }
+            }
+        }
+    }
+    function offset(el) {
+        const rect = el.getBoundingClientRect(),
+            scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
+            scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        return { top: rect.top + scrollTop, left: rect.left + scrollLeft }
+    }
+
+    setTimeout(() => {
+        animOnScroll();
+    }, 300);
+}

@@ -82,6 +82,7 @@ body {
 	.loaded & {
 	}
 	--hamburg-color: #000;
+	--headerBg-color: #fff;
 }
 
 body.dark {
@@ -96,6 +97,7 @@ body.dark {
 	// color: rgba(245, 220, 94, 0.849);
 	// color: #f4f4f4;
 	color: #efefef;
+	--headerBg-color: #202945;
 	
 }
 .dark {

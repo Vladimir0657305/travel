@@ -30,7 +30,7 @@ let swiper = "";
 function initSliders() {
 	// Перечень слайдеров
 	// Проверяем, есть ли слайдер на стронице
-	if (document.querySelector('.swiper')) { // Указываем скласс нужного слайдера
+	if (document.querySelector('.main__slider')) { // Указываем скласс нужного слайдера
 		// Создаем слайдер
 		swiper = new Swiper('.main__slider', { // Указываем скласс нужного слайдера
 			// Подключаем модули слайдера
@@ -103,10 +103,12 @@ function initSliders() {
 			modules: [Navigation, Pagination, Autoplay],
 			observer: true,
 			observeParents: true,
+			observeSlideChildren: true,
 			slidesPerView: 4,
-			spaceBetween: 30,
+			// slidesPerGroup: 3,
+			spaceBetween: 20,
 			autoHeight: false,
-			speed: 400,
+			speed: 300,
 			
 			// onSlideNextStart: function (swiper) {
 			// 	swiper.appendSlide([
@@ -132,10 +134,11 @@ function initSliders() {
 			// fadeEffect: {
 			// 	crossFade: true
 			// },
-			autoplay: {
-				delay: 3000,
-				disableOnInteraction: false,
-			},
+			
+			// autoplay: {
+			// 	delay: 3000,
+			// 	disableOnInteraction: false,
+			// },
 			grabCursor: true,
 			// Пагинация
 			pagination: {
@@ -153,10 +156,30 @@ function initSliders() {
 			
 			// Кнопки "влево/вправо"
 			navigation: {
-				prevEl: '#swiper-button-prev__feature',
-				nextEl: '.swiper-button-next__feature',
+				prevEl: '.swiper-button-prev',
+				nextEl: '.swiper-button-next',
 			},
-
+			breakpoints: {
+				// when window width is >= 320px
+				320: {
+					slidesPerView: 1,
+					spaceBetween: 10
+				},
+				// when window width is >= 480px
+				600: {
+					slidesPerView: 2,
+					spaceBetween: 10
+				},
+				900: {
+					slidesPerView: 3,
+					spaceBetween: 10
+				},
+				// when window width is >= 640px
+				1140: {
+					slidesPerView: 4,
+					spaceBetween: 10
+				}
+			},
 			// События
 			on: {}
 		});

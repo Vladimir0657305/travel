@@ -134,7 +134,7 @@
 }
 .swiper-button-prev::after,
 .swiper-button-next:after {
-    font-size: 26px !important;
+    font-size: 20px !important;
     font-weight: bold !important;
     // color: #333;
     transition: 0.3s;
@@ -164,6 +164,24 @@
 .swiper-pagination__feature .swiper-pagination-bullet-active {
     color: red!important;
     border: 1px solid black;
+}
+.swiper-pagination-bullet.red {
+    background-color: red !important;
+}
+.swiper-pagination-bullet.blue {
+    background-color: blue !important;
+}
+.swiper-pagination-bullet.green {
+    background-color: green !important;
+}
+.swiper-pagination-bullet.orange {
+    background-color: orange !important;
+}
+.swiper-pagination-bullet.gold {
+    background-color: gold !important;
+}
+.swiper-pagination-bullet.magenta {
+    background-color: magenta !important;
 }
 // ============================================ Swiper Control  End===============================
 

@@ -135,22 +135,22 @@ function initSliders() {
 			// 	crossFade: true
 			// },
 			
-			// autoplay: {
-			// 	delay: 3000,
-			// 	disableOnInteraction: false,
-			// },
+			autoplay: {
+				delay: 3000,
+				disableOnInteraction: false,
+			},
 			grabCursor: true,
 			// Пагинация
 			pagination: {
 				// el: '.swiper-pagination',
 				el: '.swiper-pagination',
 				clickable: true,
-				// renderBullet: function (index, className) {
+				renderBullet: function (index, className) {
 					// console.log('--->', className);
-				// 	var color = this.$el[0].children[0].children[index].dataset.color;
-				// 	console.log(color);
-					// return '<span class="swiper-pagination__feature-bullet"></span>';
-				// }
+					var color = this.$el[0].children[0].children[index].dataset.color;
+					// console.log('color=',color);
+					return '<span class="tab__link ' + className + ' ' + color + '"></span>';
+				}
 			
 			},
 			

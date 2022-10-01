@@ -1,4 +1,8 @@
+// $accordion-color: #0060d6;
+$accordion-expand-section-height: 50px;
+$plus-minus-height-width: 1rem;
 // ============================================ Swiper control ===============================
+
 .swiper-container-horizontal>.swiper-pagination__testimonials {
     width: initial;
     top: inherit;
@@ -27,6 +31,8 @@
     @include adaptiveValue("margin-top", 100, 40);
     display: flex;
     box-sizing: border-box;
+    // background-color: #f8f9fa;
+    background-color: var(--testimonialsbg-color) !important;
     &__left {
         width: 50%;
         margin: 20px;
@@ -34,7 +40,6 @@
     &__right {
         width: 50%;
         margin: 20px;
-        border: 1px solid green;
     }
 }
 @media (max-width: 767px) {
@@ -133,16 +138,6 @@
     word-wrap: break-word;
 }
 
-.swiper-pagination {}
-
-.swiper-pagination__testimonials {}
-
-.testimonials-body__block {}
-
-.testimonials-title {}
-
-.testimonials-title__items {}
-
 .testimonials-title__title {
     margin-bottom: 1rem;
 }
@@ -150,15 +145,81 @@
 .testimonials-title__subtitle {
     margin-bottom: 3rem;
 }
+// Базовые стили спойлеров
 
-.testimonials-logo {}
+// Блок со спойлерами
+.spollers {
+    display: grid;
+    // gap: 15px;
+}
 
-.testimonials-logo__photo {}
+// Спойлер
 
-.testimonials-logo__title {}
+// Заголовок спойлера
+.spollers__title {
+        font-family: "Playfair Display", sans-serif;
+        font-size: rem(16);
+        height: 54px;
+        width: 90%;
+        text-align: left;
+        background-color: inherit;
 
-.testimonials-logo__subtitle {}
+        &._spoller-active {
+            background-color: #fc8621;
+            font-weight: 700;
+            color: #fff;
+        }
+    
+    cursor: default;
+    text-align: left;
+    padding: rem(10) rem(45);
+    border-radius: rem(5);
+    position: relative;
 
-.testimonials-text {}
+    ._spoller-init & {
+        cursor: pointer;
 
-.testimonials-body__faq {}
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            background-color: var(--hamburg-color);
+            height: 3px;
+            width: 12px;
+            transition: transform 0.5s ease 0s;
+            
+        }
+        &::before {
+            transform:  rotate(90deg);
+        }
+        &::after {
+            transform:  rotate(0deg);
+        }
+
+        &._spoller-active {
+            &::before {
+                transform: rotate(0deg);
+                background-color: #fff;
+            }
+
+            &::after {
+                transform: rotate(180deg);
+                background-color: #fff;
+            }
+        }
+    }
+}
+
+// Контент спойлера
+.spollers__body {
+    width: 90%;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    line-height: 1.5;
+    font-size: rem(14);
+    padding: rem(20);
+    border-radius: rem(5);
+    // border: 1px solid #eee;
+}

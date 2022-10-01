@@ -1,27 +1,36 @@
 // ============================================ Swiper control ===============================
-.swiper-pagination__testimonials {
-    // color: red !important;
-    // border: 1px solid black;
-    // font-size: 20px !important;
-    // font-weight: bold !important;
-    // width: 10px !important;
-    // height: 10px !important;
-    // border-radius: 50%;
-    
+.swiper-container-horizontal>.swiper-pagination__testimonials {
+    width: initial;
+    top: inherit;
+    right: inherit;
+    bottom: inherit;
+    left: 0 !important;
+}
+.swiper-pagination-bullets .swiper-pagination-bullet {
+    // background-color: #fc8621;
+    left: 0 !important;
 }
 .swiper-pagination-bullet.orange {
     background-color: #fc8621 !important;
 }
+.swiper-pagination.swiper-pagination__testimonials {
+	position: absolute;
+	bottom: 10px;
+	left: 74px !important;
+	width: auto !important;
+	right: auto !important;
+	margin: 0;
+}
 // ============================================ Swiper Control  End===============================
 
 .testimonials-body {
+    margin-top: rem(100);
     display: flex;
     // flex: 0 0 50%;
     box-sizing: border-box;
     &__left {
         width: 50%;
         margin: 20px;
-        border: 1px solid red;
     }
     &__right {
         width: 50%;
@@ -32,11 +41,27 @@
 
 .testimonials-body {}
 
-.testimonials-body__title {}
+.testimonials-body__title {
+    font-family: "Open Sans", sans-serif;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #fc8621;
+    margin: 0 5rem 1rem;
+}
 
-.testimonials-body__subtitle {}
+.testimonials-body__subtitle {
+    font-family: "Playfair Display", sans-serif;
+    font-size: 46px;
+    // color: #000;
+    font-weight: 700;
+    margin: 0 5rem 1.5rem;
+    // margin-bottom: 3rem !important;
+}
 
-.testimonials__slider {}
+.testimonials__slider {
+    height: 370px;
+}
 
 .swiper {}
 
@@ -44,17 +69,59 @@
 
 .swiper-wrapper {}
 
-.testimonials__slide {}
+.testimonials__slide {
+    margin-top: rem(20) !important;
+}
 
-.swiper-slide {}
+.swiper-slide {
+display: flex;
+    min-width: 0;
+    flex-direction: column;
+    align-items:flex-start;
+    
+    
+}
 
-.testimonials__slide-image {}
+.testimonials__slide-image img {
+    width: 80px;
+    margin-bottom: 20px;
+    border-radius: 50%;
+    margin-left: 5rem !important;
+}
 
-.testimonials__slide-name {}
+.testimonials__slide-name {
+    font-family: "Playfair Display", sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.2;
+    color: #fc8621;
+    margin-left: 5rem !important;
+}
 
-.testimonials__slide-jobTitle {}
+.testimonials__slide-jobTitle {
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 2;
+    margin-bottom: 1rem;
+    margin-left: 5rem !important;
+}
 
-.testimonials__slide-text {}
+.testimonials__slide-text p {
+    font-size: 4.4em;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    margin-left: 5rem !important;
+
+}
+.testimonials__slide-text span {
+    width: 80%;
+    display: inline-block;
+    font-size: 14px;
+    line-height: 2;
+    margin-top: -40px !important;
+    margin-left: 5rem !important;
+}
 
 .swiper-pagination {}
 

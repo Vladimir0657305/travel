@@ -191,6 +191,8 @@ function initSliders() {
 		observeParents: true,
 		observeSlideChildren: true,
 		slidesPerView: 1,
+		spaceBetween: 0,
+		updateOnWindowResize: false,
 		autoHeight: false,
 		speed: 1000,
 		loop: true,
@@ -207,10 +209,13 @@ function initSliders() {
 			delay: 3000,
 			disableOnInteraction: false,
 		},
+		centeredSlides: false,
+		// origin: left,
 		grabCursor: true,
+		direction: 'horizontal',
 		// Пагинация
 		pagination: {
-			el: '.swiper-pagination',
+			el: '.swiper-pagination.swiper-pagination__testimonials',
 			clickable: true,
 			// #fc8621
 			renderBullet: function (index, className) {

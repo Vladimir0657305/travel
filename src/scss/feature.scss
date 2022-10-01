@@ -1,12 +1,3 @@
-.feature__slider {
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    // height: 600px;
-    @include adaptiveValue("height", 600, 500);
-    display: flex;
-    @include adaptiveValue("max-width", 1140, 320);
-}
 .feature-body {
     display: flex;
     flex-direction: column;
@@ -22,9 +13,18 @@
     display: flex;
     justify-content: center;
 }
-.feature-wrapper{
-    max-width: 1140px !important;
-    // @include adaptiveValue("max-width", 1140, 300);
+.feature__slider {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    // height: 600px;
+    @include adaptiveValue("height", 600, 500);
+    display: flex;
+    @include adaptiveValue("width", 1140, 320);
+}
+.swiper-wrapper {
+    // width: 1140px !important;
+    // @include adaptiveValue("width", 1140, 300);
     height: 600px;
     @include adaptiveValue("height", 600, 300);
     font-family:'Manrope';
@@ -40,7 +40,6 @@
     }
 }
 .feature-body__title {
-
     @include adaptiveValue("margin-left", 10, 20);
     &:first-child {
         font-size: 14px;
@@ -61,8 +60,6 @@
         line-height: 2.5;
         // @include adaptiveValue("margin-left", 20, 0);
         @include adaptiveValue("margin-right", 10, 20);
-
-
     }
     & span:last-child {
         font-family: 'Manrope';
@@ -126,8 +123,11 @@
     transition: 0.3s;
     color: rgb(31, 60, 205) !important;
 }
-.swiper-button-prev {
+.swiper-button-prev__feature {
     // margin-left: -25px;
+}
+.swiper-button-next__feature {
+    // margin-right: 25px;
 }
 .swiper-button-prev::after,
 .swiper-button-next:after {

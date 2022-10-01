@@ -151,13 +151,12 @@ function initSliders() {
 					// console.log('color=',color);
 					return '<span class="tab__link ' + className + ' ' + color + '"></span>';
 				}
-			
 			},
 			
 			// Кнопки "влево/вправо"
 			navigation: {
-				prevEl: '.swiper-button-prev',
-				nextEl: '.swiper-button-next',
+				prevEl: '.swiper-button-prev__feature',
+				nextEl: '.swiper-button-next__feature',
 			},
 			breakpoints: {
 				// when window width is >= 320px
@@ -184,6 +183,54 @@ function initSliders() {
 			on: {}
 		});
 	// }
+
+	// Testimonials Swiper Start ========================================================================
+	const testimonialsSlider = new Swiper('.testimonials__slider', {
+		modules: [Pagination, Autoplay],
+		observer: true,
+		observeParents: true,
+		observeSlideChildren: true,
+		slidesPerView: 1,
+		autoHeight: false,
+		speed: 1000,
+		loop: true,
+		// watchSlidesProgress: true,
+		// watchSlidesVisibility: true,
+		// hideOnClick: true,
+		grabCursor: true,
+		preventClicks: true,
+
+		// Эффекты
+		effect: 'slide',
+
+		autoplay: {
+			delay: 3000,
+			disableOnInteraction: false,
+		},
+		grabCursor: true,
+		// Пагинация
+		pagination: {
+			el: '.swiper-pagination',
+			clickable: true,
+			// #fc8621
+			renderBullet: function (index, className) {
+				// console.log('--->', className);
+				var color = this.$el[0].children[0].children[index].dataset.color;
+				// console.log('color=',color);
+				return '<span class="tab__link ' + className + ' ' + color + '"></span>';
+			}
+		},
+
+		// Кнопки "влево/вправо"
+		// navigation: {
+		// 	prevEl: '.swiper-button-prev__feature',
+		// 	nextEl: '.swiper-button-next__feature',
+		// },
+
+		// События
+		on: {}
+	});
+	// Testimonials Swiper End ========================================================================
 }
 
 // Скролл на базе слайдера (по классу swiper_scroll для оболочки слайдера)

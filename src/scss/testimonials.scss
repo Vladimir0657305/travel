@@ -1,0 +1,83 @@
+// ============================================ Swiper control ===============================
+.swiper-pagination__testimonials {
+    // color: red !important;
+    // border: 1px solid black;
+    // font-size: 20px !important;
+    // font-weight: bold !important;
+    // width: 10px !important;
+    // height: 10px !important;
+    // border-radius: 50%;
+    
+}
+.swiper-pagination-bullet.orange {
+    background-color: #fc8621 !important;
+}
+// ============================================ Swiper Control  End===============================
+
+.testimonials-body {
+    display: flex;
+    // flex: 0 0 50%;
+    box-sizing: border-box;
+    &__left {
+        width: 50%;
+        margin: 20px;
+        border: 1px solid red;
+    }
+    &__right {
+        width: 50%;
+        margin: 20px;
+        border: 1px solid green;
+    }
+}
+
+.testimonials-body {}
+
+.testimonials-body__title {}
+
+.testimonials-body__subtitle {}
+
+.testimonials__slider {}
+
+.swiper {}
+
+.testimonials__wrapper {}
+
+.swiper-wrapper {}
+
+.testimonials__slide {}
+
+.swiper-slide {}
+
+.testimonials__slide-image {}
+
+.testimonials__slide-name {}
+
+.testimonials__slide-jobTitle {}
+
+.testimonials__slide-text {}
+
+.swiper-pagination {}
+
+.swiper-pagination__testimonials {}
+
+.testimonials-body__block {}
+
+.testimonials-title {}
+
+.testimonials-title__items {}
+
+.testimonials-title__title {}
+
+.testimonials-title__subtitle {}
+
+.testimonials-logo {}
+
+.testimonials-logo__photo {}
+
+.testimonials-logo__title {}
+
+.testimonials-logo__subtitle {}
+
+.testimonials-text {}
+
+.testimonials-body__faq {}

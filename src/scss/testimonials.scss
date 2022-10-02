@@ -1,6 +1,4 @@
-// $accordion-color: #0060d6;
-$accordion-expand-section-height: 50px;
-$plus-minus-height-width: 1rem;
+
 // ============================================ Swiper control ===============================
 
 .swiper-container-horizontal>.swiper-pagination__testimonials {
@@ -221,5 +219,7 @@ $plus-minus-height-width: 1rem;
     font-size: rem(14);
     padding: rem(20);
     border-radius: rem(5);
+    white-space: inherit !important;
+    word-wrap: break-word;
     // border: 1px solid #eee;
 }

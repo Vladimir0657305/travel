@@ -28,6 +28,7 @@
     @include adaptiveValue("width", 1140, 320);
     height: 100px;
     @media (max-width: 600px) {
+        width: auto;
         display: flex;
         justify-content: center;
     }
@@ -40,7 +41,7 @@
     }
 }
 .feature-body__subtitle {
-    width: 410px;
+    // width: 410px;
             @media (min-width: 600px){
         }
     

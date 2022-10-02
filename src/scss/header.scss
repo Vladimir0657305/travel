@@ -1,4 +1,16 @@
 //====================================================================================================
+$menu-bg: #DE4152;
+// $menu-bg: #fc8621;
+$menu-color: #ffffff;
+$menu-font-size: 2.5rem;
+$menu-zindex: 3;
+// $hamburger-color: #fff;
+$hamburger-color: var(--hamburg-color);
+
+$hamburger-width: 50px;
+$hamburger-height: 50px;
+$hamburger-zindex: $menu-zindex;
+
 .header {
 	font-family: 'Poppins'!important;
 	width: 100%;
@@ -191,7 +203,7 @@
 }
 
 .material-symbols-outlined {
-	// transform: rotate(90deg);
+	transform: rotate(90deg);
 	font-weight: 700;
 	// font-variation-settings:
 	// 	'FILL' 0,
@@ -220,17 +232,6 @@
 
 // Menu Burger It actually starts here
 // https: //codepen.io/breadz/pen/zrMRoo
-
-$menu-bg: #DE4152;
-$menu-color: #ffffff;
-$menu-font-size: 2.5rem;
-$menu-zindex: 3;
-// $hamburger-color: #fff;
-$hamburger-color: var(--hamburg-color);
-
-$hamburger-width: 50px;
-$hamburger-height: 50px;
-$hamburger-zindex: $menu-zindex;
 
 .toggle-menu {
 	

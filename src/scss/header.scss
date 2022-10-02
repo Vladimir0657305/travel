@@ -342,30 +342,33 @@ $hamburger-zindex: $menu-zindex;
 				visibility: visible;
 				font-size: 2rem;
 				margin-left: 2rem;
-				height: 12rem; // высота есть кол-во пунктов меню с размером 2rem (т.е. 2*2=4rem) и еще * на 2 = 8rem
+				// height: 12rem; // высота есть кол-во пунктов меню с размером 2rem (т.е. 2*2=4rem) и еще * на 2 = 8rem
 				left: 0px;
 				display: flex;
 				flex-direction: column;
 				// align-items: center;
 				justify-content:start;
 				column-gap: 1rem;
-				color: $menu-color;
 				background: #e67984;
 				border-radius: .5rem;
 				position: relative;
+
 				& li {
 					margin-left: 20px;
+				}
+				& li:last-child {
+					margin-bottom: 1.5rem;
 				}
 
 				& :not(:last-child)::after{
 					content: "";
 					position: absolute;
 					top: 130%;
-						left: -200%;
-						width: 800px;
-						// flex: 1 1 auto;
-						height: 2px;
-						background-color: $menu-bg;
+					left: -20px;
+					width: 800px;
+					height: 2px;
+					background-color: $menu-bg;
+					// background-color: black;
 				}
 			}
 		}

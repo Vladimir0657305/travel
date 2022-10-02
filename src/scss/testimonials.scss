@@ -1,19 +1,15 @@
 
 // ============================================ Swiper control ===============================
-
-.swiper-container-horizontal>.swiper-pagination__testimonials {
-    width: initial;
-    top: inherit;
-    right: inherit;
-    bottom: inherit;
-    left: 0 !important;
+.tab__link.swiper-pagination-bullet.fc8621 {
+    // background-color: #fc8621 !important;
+    background-color: transparent !important;
+    width: 10px;
+    height: 10px;
+    border: 2px solid #fc8621 !important;
+    opacity: 1;
 }
-.swiper-pagination-bullets .swiper-pagination-bullet {
-    // background-color: #fc8621;
-    left: 0 !important;
-}
-.swiper-pagination-bullet.orange {
-    background-color: #fc8621 !important;
+.tab__link.swiper-pagination-bullet.fc8621.swiper-pagination-bullet-active {
+    background-color: #fc8621 !important; // set color to active bullet
 }
 .swiper-pagination.swiper-pagination__testimonials {
 	position: absolute;
@@ -22,6 +18,7 @@
 	width: auto !important;
 	right: auto !important;
 	margin: 0;
+    border-radius: 2px solid #fc8621 !important;
 }
 // ============================================ Swiper Control  End===============================
 
@@ -136,6 +133,11 @@
     word-wrap: break-word;
 }
 
+.testimonials-body__block {
+    @include adaptiveValue("margin-left", 80, 20);
+}
+
+//  @include adaptiveValue("margin-left", 80, 20);
 .testimonials-title__title {
     margin-bottom: 1rem;
 }

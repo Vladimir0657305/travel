@@ -103,6 +103,7 @@ function myFunction() {
 
 // Animation
 const animItems = document.querySelectorAll('._anim-items');
+
 if (animItems.length > 0) {
     window.addEventListener('scroll', animOnScroll);
     function animOnScroll() {
@@ -116,8 +117,7 @@ if (animItems.length > 0) {
             if (animItemHeight > window.innerHeight) {
                 animItemPoint = window.innerHeight - window.innerHeight / animStart;
             }
-
-            if ((pageYOffset > animItemOffset - animItemPoint) && pageYOffset < (animItemOffset + animItemHeight)) {
+            if ((window.pageYOffset > animItemOffset - animItemPoint) && window.pageYOffset < (animItemOffset + animItemHeight)) {
                 animItem.classList.add('_activetextmain');
             } else {
                 if (!animItem.classList.contains('_anim-no-hide')) {

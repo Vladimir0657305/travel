@@ -38,6 +38,31 @@
     font-weight: 300;
     border: 1px solid rgb(193, 191, 191);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+
+
+    // transition: all 0.5s cubic-bezier(0.310, -0.250, 0.000, 1.390);
+    transition: all 0.9s ease-in-out;
+    transform: translate3d(0%, 150%, 0);
+
+        // display: flex;
+        // align-items: center;
+        // justify-content: center;
+    &._activetextmain {
+            transform: translate3d(0, 0, 0);
+    }
+    // &._offersDestAnim {
+    //     transform: translate3d(0, 0, 0);
+    // }
+    
+
+
+
+
+
+
+
+
     & img {
         width: 250px;
         height: 200px;

@@ -1,0 +1,163 @@
+.card-block {
+    margin-top: 100px;
+    margin-bottom: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+    // @media (max-width: 750px) {
+    //     .card-block {
+    //         flex-direction: column;
+    //     }
+        
+    //     .card-text__subtitle {
+    //         width: 100%;
+    //     }
+    // }
+
+.card-img {
+    // display: inline-block;
+    // width: 50%;
+    & img {
+        // width: 555px;
+        @include adaptiveValue("width", 555, 300);
+        height: auto;
+        // max-width: 100%;
+        aspect-ratio: auto 800 / 625;
+        padding: 0 15px;
+    }
+}
+
+.card-text {
+    width: 45%;
+    padding: 0 15px;
+}
+
+.card-text__title {
+    font-family: 'Poppins', sans-serif;
+    // font-family: 'Manrope';
+    // font-family: "Playfair Display", sans-serif;
+    // font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    color: #fc8621;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+.card-text__subtitle {
+    margin-bottom: 50px;
+    font-size: 32px;
+    font-weight: 700;
+
+}
+
+.card-text__text {
+    width: 85%;
+    max-width: 85%;
+    font-size: 15px;
+    line-height: 30px;
+    margin-bottom: 50px;
+    & p::first-letter {
+        font-size: 50px;
+        padding: 8px;
+        padding-bottom: 12px;
+        margin-right: 5px;
+        font-family: cursive;
+        // background-color: tomato;
+        background-color: #fc8621;
+        color: white;
+        border-radius: 4px;
+        float: left;
+        }
+}
+
+.card-text__button {
+    display: inline-block;
+    width: 160px;
+    height: 40px;
+    background-color: #fc8621;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    & a {
+        font-family: 'Poppins', sans-serif;
+        font-family: 'Manrope';
+        font-family: "Playfair Display", sans-serif;
+        font-family: "Open Sans", sans-serif;
+        font-size: 15px;
+        font-weight: 400;
+        letter-spacing: 1px;
+        line-height: 30px;
+        text-transform: uppercase;
+        color: #fff;
+        
+    }
+}
+// ============================================ Tabs control start ===============================
+.tabs {
+    @include adaptiveValue("margin-top", 80, 30);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+    // .tabs__navigation
+    &__navigation {
+        display: flex;
+        justify-content: center;
+    }
+
+    // .tabs__title
+    &__title {
+        margin: rem(10) rem(35);
+        font-family: 'Poppins', sans-serif;
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 30px;
+        text-decoration: none;
+        text-transform: uppercase;
+        position: relative;
+        // margin: 0 35px;
+        &::after {
+                content: '';
+                // width: 100%;
+                width: 0;
+                justify-content: center;
+                height: 3px;
+                background: #fc8621;
+                position: absolute;
+                bottom: 0;
+                left:0;
+                transition: width .3s;
+                }
+
+
+        &._tab-active {
+            &::after {
+                width: 100%;
+            }
+        }
+    }
+
+    // .tabs__content
+    &__content {
+        // border: 1px solid #eee;
+        padding: rem(10) rem(15);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    // .tabs__body
+    &__body {
+        // position: absolute;
+        // left: calc(30% / 2 );
+        // display: flex;
+        // justify-content: center;
+    }
+}
+.tabs__content-center {
+    width: 80%;
+}
+// ============================================ Tabs Control  End ===============================

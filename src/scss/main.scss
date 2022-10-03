@@ -124,7 +124,7 @@
     animation-delay: calc((0.5 + var(--index)) * (var(--speed) / 3));
     animation-fill-mode: both;
     animation-timing-function: steps(1), ease-out;
-    font-family: system-ui;
+    // font-family: system-ui;
     margin: 1rem;
 }
 

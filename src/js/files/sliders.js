@@ -219,9 +219,7 @@ function initSliders() {
 			clickable: true,
 			// #fc8621
 			renderBullet: function (index, className) {
-				// console.log('--->', className);
 				var color = this.$el[0].children[0].children[index].dataset.color;
-				// console.log('color=',color);
 				return '<span class="tab__link ' + className + ' ' + color + '"></span>';
 			}
 		},
@@ -285,8 +283,6 @@ function myEndFunction() {
 	progressBar.style.animation = null;
 }
 
-
-
 document.querySelectorAll(".swiper, .carousel-progress").forEach((item) => {
 	item.addEventListener("mouseenter", function () {
 		progressBar.style.animationPlayState = "paused";
@@ -298,5 +294,3 @@ document.querySelectorAll(".swiper, .carousel-progress").forEach((item) => {
 		progressBar.style.animationPlayState = "running";
 	});
 });
-
-

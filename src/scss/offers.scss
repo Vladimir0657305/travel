@@ -27,10 +27,7 @@
         justify-content: space-around;
 }
 .offers-body__destination {
-    // margin-left: auto;
-    // margin-right: auto;
     margin: 0 10px;
-    // row-gap: 1rem;
     width: 250px;
     margin-bottom: 30px;
     box-sizing: border-box;
@@ -39,24 +36,6 @@
     border: 1px solid rgb(193, 191, 191);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
-
-    // transform: translate(0px, 120%);
-    //     opacity: 0;
-    //     transition: all 0.8s ease 0s;
-    // transition: all 0.5s cubic-bezier(0.310, -0.250, 0.000, 1.390);
-    // transition: all 0.9s ease-in-out;
-    // transform: translate3d(0%, 150%, 0);
-
-        // display: flex;
-        // align-items: center;
-        // justify-content: center;
-    // &._activetextmain {
-    //         transform: translate3d(0, 0, 0);
-    // }
-    // &._offersDestAnim {
-    //     transform: translate3d(0, 0, 0);
-    // }
-    
     & img {
         width: 250px;
         height: 200px;
@@ -98,9 +77,6 @@
     transition: all 1.2s cubic-bezier(0.310, -0.250, 0.000, 1.390) 0.8s;
     }
 }
-
-
-
 .offers-body__text {
     padding: 16px;
     width: 250px;
@@ -142,9 +118,6 @@
     &__rightPrice {}
 }
 
-
-
-
 .offers-body__bottom {
     box-sizing: border-box;
     display: flex;
@@ -170,8 +143,6 @@
 .map {
     transform: rotate(0deg);
 }
-
-.material-symbols-outlined {}
 
 .star {
     transform: rotate(-145deg);

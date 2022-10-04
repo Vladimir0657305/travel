@@ -73,7 +73,6 @@
 }
 
 .card-text__button {
-    display: inline-block;
     width: 160px;
     height: 40px;
     background-color: #fc8621;
@@ -144,17 +143,6 @@
     &__content {
         // border: 1px solid #eee;
         padding: rem(10) rem(15);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    // .tabs__body
-    &__body {
-        // position: absolute;
-        // left: calc(30% / 2 );
-        // display: flex;
-        // justify-content: center;
     }
 }
 .tabs__content-center {

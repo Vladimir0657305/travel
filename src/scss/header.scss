@@ -46,7 +46,6 @@ $hamburger-zindex: $menu-zindex;
 	align-items: center;
 	@include adaptiveValue("font-size", 18, 7);
 	
-	
 	&-logo  {
 		display: flex;
 		align-items: center;
@@ -100,6 +99,9 @@ $hamburger-zindex: $menu-zindex;
 			height: auto;
 			background: var(--headerBg-color);
 		}
+	}
+	&__links span {
+		vertical-align: middle;
 	}
 	&__links:hover {
 		color: red;

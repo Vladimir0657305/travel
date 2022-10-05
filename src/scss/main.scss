@@ -6,9 +6,11 @@
     --speed: 1s;
     --scale: 1.5; // coefficient image zooming
 }
+.main-start {
+    color: transparent;
+    margin-bottom: 20px;
+}
 .main__slider {
-    // padding-top: 70px;
-    // margin-top: 70px;
     box-sizing: border-box;
     overflow: hidden;
     position: relative; // Положение точек пагинации
@@ -17,9 +19,6 @@
     width: 100%;
     height: 100vh;
     font-family: $fontFamily;
-    // position: relative;
-    // margin-top: 70px;
-    
 }
 // ============================================ Swiper control ===============================
 .swiper-button-prev_main:after,
@@ -33,30 +32,20 @@
 .swiper-button-next_main:hover:after {
     opacity: 0.7;
 }
-.swiper-pagination-bullets {
-    bottom: 28px !important;
+.swiper-pagination.swiper-pagination_main {
+    bottom: 60px !important;
+}
+@media (max-width:450px) {
+    .swiper-pagination.swiper-pagination_main {
+            bottom: 0px !important;
+        }
 }
 .swiper-pagination_main {
     position: absolute;
     bottom: 20px !important;
 
 }
-// .swiper-pagination .swiper-pagination_main-bullet {
-//     width: 28px !important;
-//     height: 28px !important;
-//     border: 2px solid #fff;
-//     border-radius: 50% !important;
-//     background-color: transparent !important;
-//     background-color: yellow!important;
-//     opacity: 1 !important;
-//     bottom: 28px !important;
-//     display: block;
-// }
-// .swiper-pagination .swiper-pagination_main-bullet {
-    // background-color: #fff !important;
-    // width: 28px !important;
-    // height: 28px !important;
-// }
+
 // ===================================== End  Swiper control =================================
 
 .swiper-slide {
@@ -66,10 +55,6 @@
     flex-direction: column;
 }
 
-.swiper-slide__image {
-    // width: 100%;
-    // object-fit: fill;
-}
 .swiper-slide__image img {
     aspect-ratio: 3.8 / 2.2;
     margin-top: -40px !important;
@@ -104,7 +89,6 @@
     @include adaptiveValue("font-size", 80, 30);
     font-weight: 700;
     letter-spacing: 1px;
-    // text-transform: uppercase;
     line-height: .6;
     & span:last-child {
         text-transform: uppercase;
@@ -116,7 +100,6 @@
 
 .swiper-slide .swiper-slide__text span {
     --color: var(--red);
-    /* color: var(--color); */
     color: transparent;
     display: inline-block;
     position: relative;
@@ -124,7 +107,6 @@
     animation-delay: calc((0.5 + var(--index)) * (var(--speed) / 3));
     animation-fill-mode: both;
     animation-timing-function: steps(1), ease-out;
-    // font-family: system-ui;
     margin: 1rem;
 }
 
@@ -137,7 +119,6 @@
     animation-duration: var(--speed);
     animation-delay: calc((0.5 + var(--index)) * (var(--speed) / 3));
     animation-fill-mode: both;
-
 }
 
 .swiper-slide-active .swiper-slide__text {
@@ -145,7 +126,6 @@
     content: "";
     position: absolute;
     inset: -20% 0;
-    /* animation-delay: calc((.5) * (var(--speed) / 3)); */
     animation-fill-mode: both;
 }
 
@@ -162,7 +142,6 @@
 .swiper-slide__text span:nth-of-type(2) {
     --color: var(--yellow);
     --index: .4;
-    // font-size: calc(3vw);
     @include adaptiveValue("font-size", 30, 14);
 }
 
@@ -195,9 +174,8 @@
 
 // ====================================== Swiper Progress Bar ==================================
 .carousel-progress {
-    // position: relative;
     position: sticky;
-    top: 70px ;
+    @include adaptiveValue("top", 14, 5);
     left: 0;
     min-width: 100%;
     height: 8px;

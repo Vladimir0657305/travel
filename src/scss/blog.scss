@@ -10,15 +10,17 @@
     flex-wrap: wrap;
 }
 
+.blog-block__top {}
+
 .blog-block__title {
     font-family: "Open Sans", sans-serif;
     font-size: 20px;
     text-transform: uppercase;
     font-weight: 700;
     color: #fc8621;
-    // margin-top: 100px;
     @include adaptiveValue("margin-top", 100, 30);
-    margin-left: 100px;
+    // margin-left: 100px;
+    @include adaptiveValue("margin-left", 100, 20);
     margin-bottom: 15px;
 }
 
@@ -26,7 +28,7 @@
     font-family: "Playfair Display", sans-serif;
     font-size: 46px;
     font-weight: 700;
-    margin-left: 100px;
+    @include adaptiveValue("margin-left", 100, 20);
     margin-bottom: 3rem !important;
 }
 
@@ -48,9 +50,21 @@
     .blog-group {
         flex-direction: column;
     }
-
     .blog-group-block {
         min-width: 100%;
+    }
+    .blog-block__top {
+        
+    }
+    .blog-block__title {
+        
+    }
+    .blog-block__subtitle {
+        // display: flex;
+        // flex-direction: column;
+        // justify-content: center;
+        // align-items: center;
+        // width: 100%;
     }
 }
 

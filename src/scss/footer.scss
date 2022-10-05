@@ -1,48 +1,41 @@
 //====================================================================================================
-.footer {}
-
-.footer__container {}
-
 .footer-top {
     width: 100%;
     height: 140px;
     background: #fc8621;
-    margin-top: 100px;
+    // margin-top: 100px;
+    @include adaptiveValue("margin-top", 100, 40);
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
 .footer-top__title {
+    display: inline;
         font-family: "Playfair Display", sans-serif;
         font-size: 1.75rem;
+        // padding-left: 100px;
         @include adaptiveValue("margin-left", 100, 30);
 }
 
-.footer-top__button {
-
-}
 .btn-foot {
-        padding-top: 10px;
-            padding-bottom: 10px;
-            padding-left: 30px;
-            padding-right: 30px;
-    width: 250px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    // padding-left: 30px;
+    @include adaptiveValue("padding-left", 30, 10);
+    // padding-right: 30px;
+    @include adaptiveValue("padding-right", 30, 10);
+    // width: 250px;
     height: 70px;
     font-size: rem(17);
     @include adaptiveValue("font-size", 17, 14);
-    // padding: 0 20px;
-    // font-weight: 400;
-    // line-height: math.div(21, 17);
-    // @include adaptiveValue("margin-top", 100, 30);
-    // @include adaptiveValue("margin-bottom", 64, 34);
-    // height: rem(50);
-    @include adaptiveValue("max-width", 300, 220);
+    @include adaptiveValue("width", 300, 200);
     border-radius: 15px 100px 15px 100px;
     background-color: transparent;
     box-sizing: border-box;
     border: 3px solid ;
-    margin-right: 100px;
+    // margin-right: 50px;
+    @include adaptiveValue("margin-right", 100, 50);
     animation: flicker-1 2s linear infinite both;
     @keyframes flicker-1 {
     
@@ -53,6 +46,7 @@
     
             41.99% {
                 opacity: 1;
+                color: var(--headerBg-color);
             }
     
             42% {
@@ -65,10 +59,12 @@
     
             43.01% {
                 opacity: 1;
+                color: var(--headerBg-color);
             }
     
             47.99% {
                 opacity: 1;
+                color: var(--headerBg-color);
             }
     
             48% {
@@ -84,11 +80,9 @@
             }
         }
     
-
         &:hover {
             color: red;
             border: 3px solid red;
-            
             animation: shake 0.5s infinite;
             @keyframes shake {
                 0% {
@@ -135,14 +129,18 @@
                     transform: translate(1px, 1px) rotate(0deg);
                 }
             }
-
-            
         }
 }
 
 .footer-body {
     width: 100%;
     display: flex;
+}
+
+@media (max-width: 767px) {
+    .footer-body {
+        flex-direction: column;
+    }
 }
 
 .footer-body__about {
@@ -213,11 +211,13 @@
     box-sizing: border-box;
     margin-bottom: 30px;
 }
+
 .footer-body__links,
 .footer-body__company, 
 .footer-body__contact {
     flex: 0 1 10%;
     @include adaptiveValue("margin-top", 80, 30);
+    @include adaptiveValue("margin-left", 0, 30);
     padding: 0 15px;
     position: relative;
     display: inline-block;
@@ -248,7 +248,6 @@
 .footer-body__contact {
     flex: 0 1 35%;
     @include adaptiveValue("margin-top", 80, 30);
-    @include adaptiveValue("margin-left", 50, 30);
     padding: 0 15px;
     width: 100%;
     & span {
@@ -263,9 +262,18 @@
     margin-bottom: 100px;
     display: flex;
     justify-content: center;
+    @media (max-width: 450px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        & span {
+            margin-bottom: 20px;
+        }
+    }
 }
 
 .footer-botom {
     margin-top: 100px;
+    color: transparent;
 }
 //====================================================================================================

@@ -1070,7 +1070,7 @@ body.dark {
 }
 
 .swiper-slide__image img {
-  aspect-ratio: 3.8/2.2;
+  aspect-ratio: 3.8/2;
   margin-top: -40px !important;
   -o-object-fit: fill;
      object-fit: fill;
